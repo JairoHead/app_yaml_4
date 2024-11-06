@@ -1,0 +1,13 @@
+runtime: php82
+env: standard
+api_version: 1
+
+handlers:
+  # Serve static files (images in this case)
+  - url: /(.+\.(gif|png|jpg))$
+    static_files: \1
+    upload: .+\.(gif|png|jpg)$
+
+  # Serve PHP scripts
+  - url: /(.+\.php)$
+    script: \1
